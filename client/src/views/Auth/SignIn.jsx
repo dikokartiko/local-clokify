@@ -1,5 +1,6 @@
 import React from "react";
 import { TEInput, TERipple } from "tw-elements-react";
+import { Link } from "react-router-dom";
 
 function SignIn() {
   return (
@@ -41,7 +42,7 @@ function SignIn() {
               </div>
 
               <div className="mb-6 items-center justify-between">
-                <a href="#!">Forgot password?</a>
+                <Link to="/attandance-live">Forgot password?</Link>
               </div>
             </form>
           </div>
