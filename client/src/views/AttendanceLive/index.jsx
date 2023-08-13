@@ -7,7 +7,7 @@ function index() {
     <div className='attendanceLive'>
         <FormAttendance></FormAttendance>
         <div>
-          <p className='font-semibold'>Attendance Log</p>
+          <p className='font-semibold mb-4'>Attendance Log</p>
           <div className='card-item-custom'>
             <div className='card-item-custom'>
               <div>
