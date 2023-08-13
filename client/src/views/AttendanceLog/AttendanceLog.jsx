@@ -11,17 +11,15 @@ function AttendanceLog() {
                 <Filter></Filter>
             </div>
             <div className='attendanceCards mb-4'>
-                <div className="grid grid-cols-3 gap-3">
-                    {dataCards.map((item, key) => {
-                        return (
-                            <Cards
-                                key={key}
-                                labelCard={item?.labelCard}
-                                dataCardItem={item?.data}
-                            ></Cards>
-                        );
-                    })}
-                </div>
+                {dataCards.map((item, key) => {
+                    return (
+                        <Cards
+                            key={key}
+                            labelCard={item?.labelCard}
+                            dataCardItem={item?.data}
+                        ></Cards>
+                    );
+                })}
             </div>
             <div className='attendanceTable mt-4'>
                 <Table></Table>

@@ -91,3 +91,32 @@ code {
 .details-log a {
   color: #255cb3;
 }
+
+.attendanceCards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(1px, 300px));
+}
+
+@media screen and (max-width: 991px) {
+  .attendanceLive {
+    width: 80%;
+  }
+
+  .attendanceCards {
+    grid-template-columns: repeat(2, minmax(1px, 300px));
+  }
+}
+
+@media screen and (max-width: 557px) {
+  .attendanceLive {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 675px) {
+
+  .attendanceCards {
+    grid-template-columns: repeat(1, minmax(1px, 1fr));
+  }
+}
