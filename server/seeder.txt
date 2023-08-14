@@ -1,0 +1,7 @@
+npx sequelize db:migrate
+npx sequelize-cli db:seed --seed 20230730075735-roles
+npx sequelize-cli db:seed --seed 20230813072702-demo-user
+npx sequelize-cli db:seed --seed 20230813074140-demo-salary
+npx sequelize-cli db:seed --seed 20230813074316-demo-payroll
+npx sequelize-cli db:seed --seed 20230813110914-demo-schedule
+npx sequelize-cli db:seed --seed 20230813111923-demo-attendance
