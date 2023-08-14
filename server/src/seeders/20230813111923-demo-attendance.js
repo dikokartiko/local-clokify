@@ -16,8 +16,8 @@ module.exports = {
       for (let j = 0; j < 10; j++) {
         const date = getRandomDate(2023);
         attendanceData.push({
-          clockIn: "09.00",
-          clockOut: "17.00",
+          clockIn: "09:00:00",
+          clockOut: "17:00:00",
           date: date.toISOString().split("T")[0],
           ontime: true,
           lateClockin: false,
