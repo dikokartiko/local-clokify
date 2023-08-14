@@ -1,10 +1,11 @@
-import './App.css';
+import "./App.css";
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import SignIn from "./views/Auth/SignIn";
 import AttendanceLog from "./views/AttendanceLog/AttendanceLog";
 import AttendanceLive from "./views/AttendanceLive/index";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/attandance-live" element={<AttendanceLive />} />
         <Route path="/attandance-log" element={<AttendanceLog />} />
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
   );
 }
