@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"merele2584@weishu8.com\",\r\n    \"password\": \"@Jogja123.\",\r\n    \"fullname\" : \"paijo\",\r\n    \"birthdate\" : \"1996-01-14\",\r\n    \"joinDate\": \"2023-02-12\",\r\n    \"address\": \"kepuh\",\r\n    \"phoneNumber\": \"081578809131\",\r\n    \"salaryAmount\": 1000000,\r\n    \"status\" : 1,\r\n    \"roleId\": 2\r\n}\r\n",
+					"raw": "{\r\n    \"email\": \"nikopim356@v1zw.com\",\r\n    \"password\": \"@Jogja123.\",\r\n    \"fullname\" : \"paijo\",\r\n    \"birthdate\" : \"1996-01-14\",\r\n    \"joinDate\": \"2023-02-12\",\r\n    \"address\": \"kepuh\",\r\n    \"phoneNumber\": \"081578803131\",\r\n    \"salaryAmount\": 1000000,\r\n    \"status\" : 1,\r\n    \"roleId\": 2\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -71,18 +71,24 @@
 			"response": []
 		},
 		{
-			"name": "Keep login",
+			"name": "get All employee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY5MTkxNzk1OX0.kKCn4gSoioilQ7RAzJPgOEeXNYr6G4Lo_kt0IRY8Kxo",
-						"type": "text"
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"dikowebdev@gmail.com\",\r\n    \"password\": \"@Qwerty123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
 					}
-				],
+				},
 				"url": {
-					"raw": "http://localhost:8000/auth/keep-login",
+					"raw": "http://localhost:8000/auth/all",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -90,7 +96,33 @@
 					"port": "8000",
 					"path": [
 						"auth",
-						"keep-login"
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Keep login",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY5MTk4NzUzOH0._sgCbEkpBCXrM8OAJ6GgQj3-dkGOVwOJuNGpYR1FU68",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/auth/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						""
 					]
 				}
 			},
@@ -175,7 +207,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"clockIn\": \"07:00:00\",\r\n  \"clockOut\": \"13:00:00\",\r\n  \"workday\": \"Friday\"\r\n}\r\n",
+					"raw": "{\r\n  \"clockIn\": \"16:00:00\",\r\n  \"clockOut\": \"23:00:00\",\r\n  \"workday\": \"Monday\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -183,7 +215,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/schedule/2",
+					"raw": "http://localhost:8000/schedule/8",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -191,7 +223,7 @@
 					"port": "8000",
 					"path": [
 						"schedule",
-						"2"
+						"8"
 					]
 				}
 			},
@@ -427,7 +459,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8000/attendance/history?sortOrder=desc&orderBy=attendanceId",
+					"raw": "http://localhost:8000/attendance/attendance-report/2/2023:01:01/2023:10:10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -435,23 +467,46 @@
 					"port": "8000",
 					"path": [
 						"attendance",
-						"history"
+						"attendance-report",
+						"2",
+						"2023:01:01",
+						"2023:10:10"
 					],
 					"query": [
-						{
-							"key": "sortOrder",
-							"value": "desc",
-							"description": "asc/desc"
-						},
 						{
 							"key": "orderBy",
 							"value": "date",
 							"disabled": true
-						},
-						{
-							"key": "orderBy",
-							"value": "attendanceId"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get payroll report",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY5MjAxNDkyNn0.PD5jULvYpJXFrK6RdP11e7gVb5zp3VHmlGUBhm8YhXk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/payroll/report/2/2023-01-01/2023-12-31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"payroll",
+						"report",
+						"2",
+						"2023-01-01",
+						"2023-12-31"
 					]
 				}
 			},
