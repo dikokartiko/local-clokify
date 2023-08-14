@@ -1,13 +1,14 @@
 import React from "react";
 import { toast } from "react-toastify";
 import { TEInput, TERipple } from "tw-elements-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
 function SignIn() {
   // Define a validation schema using Yup
+  const nav = useNavigate();
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Invalid email format")
@@ -24,15 +25,17 @@ function SignIn() {
   // Define a submit handler function
   const handleSubmit = async (values, actions) => {
     try {
-      // Submit the form data using axios
       const response = await axios.post(
         "http://localhost:8000/auth/login",
         values
       );
       localStorage.setItem("token", response.data.token);
-      // Display a success message using the toast function
+      response?.data?.user?.roleId !== 1
+        ? nav("/attandance-live")
+        : nav("/admin-dasboard");
       toast.success("Login successful!");
     } catch (error) {
+      console.log(error);
       toast.error("An error occurred. Please try again.");
     } finally {
       actions.setSubmitting(false);
