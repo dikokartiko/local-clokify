@@ -32,6 +32,7 @@ function Index() {
 
   return (
     <div className="attendanceLive">
+      <button></button>
       <FormAttendance></FormAttendance>
       <div>
         <p className="font-semibold mb-4">Attendance Log</p>
