@@ -35,7 +35,6 @@ function SignIn() {
         : nav("/admin-dasboard");
       toast.success("Login successful!");
     } catch (error) {
-      console.log(error);
       toast.error("An error occurred. Please try again.");
     } finally {
       actions.setSubmitting(false);
@@ -95,10 +94,6 @@ function SignIn() {
                         Login
                       </button>
                     </TERipple>
-                  </div>
-
-                  <div className="mb-6 items-center justify-between">
-                    <Link to="/attandance-live">Forgot password?</Link>
                   </div>
                 </Form>
               )}

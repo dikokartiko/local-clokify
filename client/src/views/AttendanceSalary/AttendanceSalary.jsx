@@ -4,7 +4,7 @@ import Table from "./components/Table";
 import Cards from "./components/Cards";
 import Filter from "./components/Filter";
 import { Link, useNavigate } from "react-router-dom";
-function AttendanceLog() {
+function AttendanceSalary() {
   return (
     <div className="p-4 attendance">
       <div className="mb-4 mt-4 attendanceFilter">
@@ -31,6 +31,7 @@ function AttendanceLog() {
           </Link>
         </div>
       </div>
+
       <div className="attendanceTable mt-4">
         <Table></Table>
       </div>
@@ -38,4 +39,4 @@ function AttendanceLog() {
   );
 }
 
-export default AttendanceLog;
+export default AttendanceSalary;
