@@ -48,7 +48,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\" : \"rkodiko@gmail.com\",\r\n    \"password\": \"@Qwerty123\"\r\n}",
+					"raw": "{\r\n    \"email\" : \"dikowebdev@gmail.com\",\r\n    \"password\": \"@Qwerty123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -198,6 +198,42 @@
 			"response": []
 		},
 		{
+			"name": "Get Employee Schedule",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY5MTk4NzUzOH0._sgCbEkpBCXrM8OAJ6GgQj3-dkGOVwOJuNGpYR1FU68",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/schedule/?userId=2&day=Monday",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"schedule",
+						""
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "2"
+						},
+						{
+							"key": "day",
+							"value": "Monday"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Update Schedule",
 			"request": {
 				"method": "PATCH",
@@ -280,7 +316,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"date\": \"2023-08-13\"\r\n}\r\n",
+					"raw": "{\r\n  \"time\": \"20:40:00\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -315,7 +351,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"date\": \"2023-08-13\"\r\n}\r\n",
+					"raw": "{\r\n  \"time\": \"21:01:00\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -323,7 +359,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/attendance/clock-in",
+					"raw": "http://localhost:8000/attendance/clock-out",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -331,7 +367,91 @@
 					"port": "8000",
 					"path": [
 						"attendance",
-						"clock-in"
+						"clock-out"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "attandance history",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY5MjAwMDI5OX0.6C6O9PbppPqhps-TYSUC2lFMxPw2NVeoHyPz9L5vlYc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/attendance/history?sortOrder=desc&orderBy=attendanceId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"attendance",
+						"history"
+					],
+					"query": [
+						{
+							"key": "sortOrder",
+							"value": "desc",
+							"description": "asc/desc"
+						},
+						{
+							"key": "orderBy",
+							"value": "date",
+							"disabled": true
+						},
+						{
+							"key": "orderBy",
+							"value": "attendanceId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "attandance reports",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY5MjAwMDI5OX0.6C6O9PbppPqhps-TYSUC2lFMxPw2NVeoHyPz9L5vlYc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/attendance/history?sortOrder=desc&orderBy=attendanceId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"attendance",
+						"history"
+					],
+					"query": [
+						{
+							"key": "sortOrder",
+							"value": "desc",
+							"description": "asc/desc"
+						},
+						{
+							"key": "orderBy",
+							"value": "date",
+							"disabled": true
+						},
+						{
+							"key": "orderBy",
+							"value": "attendanceId"
+						}
 					]
 				}
 			},
