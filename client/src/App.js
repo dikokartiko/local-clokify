@@ -8,12 +8,14 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AttendanceSalary from "./views/AttendanceSalary/AttendanceSalary";
 import ResetPassword from "./views/Auth/ResetPass";
+import DashboardAdmin from "./views/Admindashboard/AdminDashboard";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SignIn />} />
+        <Route path="/admin-dasboard" element={<DashboardAdmin />} />
         <Route path="/attandance-live" element={<AttendanceLive />} />
         <Route path="/attandance-log" element={<AttendanceLog />} />
         <Route path="/attandance-Salary" element={<AttendanceSalary />} />
